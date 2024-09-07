@@ -245,7 +245,7 @@ class GameState():
                                 isBlocking = True
                     if not isAttacking or isBlocking:
                         moves.append(Move((row,col), (row + moveAmount, col - 1), self.board, enPassant = True))
-        if col+1 < 7: #captures to right
+        if col+1 < 8: #captures to right
             if not piecePinned or pinDirection == (moveAmount,1):
                 if self.board[row + moveAmount][col + 1][0] == opponentColor:
                     if row + moveAmount == backRow: #if piece gets to back rank (pawn promotion)
