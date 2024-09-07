@@ -59,23 +59,15 @@ class GameState():
         #castle moves
         if move.castle:
             if move.endCol - move.startCol == 2: #kingside
-                # Ensure indices are valid (move.endCol should be 6 for kingside)
+                #ensure indices are valid (move.endCol should be 6 for kingside)
                 if move.endCol == 6:
-                    self.board[move.endRow][5] = self.board[move.endRow][7] # move rook from column 7 to 5
-                    self.board[move.endRow][7] = '--' # empty space where rook was
-            else: # queenside
-                # Ensure indices are valid (move.endCol should be 2 for queenside)
+                    self.board[move.endRow][5] = self.board[move.endRow][7] #move rook from column 7 to 5
+                    self.board[move.endRow][7] = '--' #empty space where rook was
+            else: #queenside
+                #ensure indices are valid (move.endCol should be 2 for queenside)
                 if move.endCol == 2:
-                    self.board[move.endRow][3] = self.board[move.endRow][0] # move rook from column 0 to 3
-                    self.board[move.endRow][0] = '--' # empty space where rook was
-
-#        if move.castle:
-#            if move.endCol - move.startCol == 2: #kingside
-#                self.board[move.endRow][move.endCol - 1] = self.board[move.endRow][move.endCol + 1] #move rook
-#                self.board[move.endRow][move.endCol + 1] = '--' #empty space where rook was
-#            else: #queenside
-#                    self.board[move.endRow][move.endCol + 1] = self.board[move.endRow][move.endCol - 2] #move rook
-#                    self.board[move.endRow][move.endCol - 2] = '--' #empty space where rook was
+                    self.board[move.endRow][3] = self.board[move.endRow][0] #move rook from column 0 to 3
+                    self.board[move.endRow][0] = '--' #empty space where rook was
                 
         self.enPassantPossibleLog.append(self.enPassantPossible) #update log
         
